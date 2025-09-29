@@ -1,0 +1,124 @@
+/* Global Dark Theme */
+body {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Main Container */
+.container {
+    width: 450px;
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00dcdc;
+}
+
+/* Task Form */
+.task-form textarea {
+    width: 100%;
+    height: 70px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    resize: none;
+    border-radius: 8px;
+}
+
+.task-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: #00dcdc;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.task-form button:hover {
+    background: #00b3b3;
+}
+
+/* Task List */
+.tasks-container {
+    margin-top: 20px;
+}
+
+/* Each Task Card */
+.task {
+    position: relative;
+    background: #333;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.task:hover {
+    transform: translateX(-70px);
+}
+
+/* Task Text */
+.task-content p {
+    margin: 0 0 6px;
+    white-space: pre-line;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Task Actions Slide-In Buttons */
+.task-actions {
+    position: absolute;
+    top: 0;
+    right: -120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: right 0.3s ease;
+}
+
+.task:hover .task-actions {
+    right: 10px;
+}
+
+.complete-btn,
+.delete-btn {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.complete-btn {
+    background: #4caf50;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+/* Completed Task Style */
+.task.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
