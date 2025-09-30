@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductivityHub</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>ProductivityHub</h1>
+
+        <!-- Task Input Form -->
+        <form action="/add" method="POST" class="task-form">
+            <textarea name="content" placeholder="Write your task or note..." required></textarea>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Tasks List -->
+        <div class="tasks-container">
+            {% for task in tasks %}
+            <div class="task {% if task[3] == 1 %}completed{% endif %}" data-id="{{ task[0] }}">
+                <div class="task-content">
+                    <p>{{ task[1] }}</p>
+                    <span class="timestamp">{{ task[2] }}</span>
+                </div>
+                <div class="task-actions">
+                    {% if task[3] == 0 %}
+                    <button class="complete-btn">Complete</button>
+                    {% endif %}
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+            {% endfor %}
+            <footer class="footer">All Rights Reserved | &copy; <a href="#">Tunez1805 &nbsp;</a> | 2025.</footer>
+        </div>
+    </div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
